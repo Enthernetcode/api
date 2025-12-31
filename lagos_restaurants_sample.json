@@ -1,0 +1,66 @@
+[
+  {
+    "id": "chowdeck_logo_c451ebc0",
+    "name": "chowdeck logo",
+    "city": "Ikeja",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Lagos",
+    "url": "https://chowdeck.com/store?q=chowdeck+logo",
+    "rating": null,
+    "cuisine": "Nigerian",
+    "specialties": [],
+    "delivery_areas": [
+      "Ikeja"
+    ],
+    "opening_hours": null
+  },
+  {
+    "id": "african_meals_9fc9ad37",
+    "name": "African \nMeals",
+    "city": "Ikeja",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Lagos",
+    "url": "https://chowdeck.com/store?q=African+\nMeals",
+    "rating": null,
+    "cuisine": "Nigerian",
+    "specialties": [],
+    "delivery_areas": [
+      "Ikeja"
+    ],
+    "opening_hours": null
+  },
+  {
+    "id": "empty_cart_fb3bef6f",
+    "name": "empty cart",
+    "city": "Ikeja",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Lagos",
+    "url": "https://chowdeck.com/store?q=empty+cart",
+    "rating": null,
+    "cuisine": "Nigerian",
+    "specialties": [],
+    "delivery_areas": [
+      "Ikeja"
+    ],
+    "opening_hours": null
+  },
+  {
+    "id": "relay_3984293a",
+    "name": "relay",
+    "city": "Ikeja",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Lagos",
+    "url": "https://chowdeck.com/store?q=relay",
+    "rating": null,
+    "cuisine": "Nigerian",
+    "specialties": [],
+    "delivery_areas": [
+      "Ikeja"
+    ],
+    "opening_hours": null
+  }
+]

@@ -1,0 +1,221 @@
+[
+  {
+    "id": "the_place_343ac192",
+    "name": "The Place",
+    "url": "https://chowdeck.com/store?q=the+place",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Lagos Mainland",
+    "location": "All major cities in Lagos and Abuja.",
+    "rating": 4.67,
+    "delivery_areas": [
+      "All major cities in Lagos and Abuja."
+    ],
+    "opening_hours": "9:00 AM - 8:00 PM from Mondays to Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "molabat_kitchen_98ce9146",
+    "name": "Molabat Kitchen",
+    "url": "https://chowdeck.com/store/lekki/restaurants/molabat-kitchenikorodu3aca4j",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Eti-Osa",
+    "location": "14 Agungi Ajiran Rd, Lekki Penninsula II, 106104, Lekki, Lagos, Nigeria.",
+    "rating": 4.47,
+    "delivery_areas": [
+      "Ikoyi",
+      "Victoria Island",
+      "Lekki Phase I",
+      "Ikate",
+      "Jakande",
+      "Osapa London",
+      "Igbo Efon",
+      "Ologolo",
+      "Agungi",
+      "and its environs."
+    ],
+    "opening_hours": "10:00 AM - 8:00 PM from Mondays to Fridays, 10:00 AM - 6:00 PM on Saturdays and 12:00 PM - 6:00 PM on Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "mega_chicken_a3dd5496",
+    "name": "Mega Chicken",
+    "url": "https://chowdeck.com/store?q=mega+chicken",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Ikota, and Lekki.",
+    "rating": 4.36,
+    "delivery_areas": [
+      "All major cities in Lagos."
+    ],
+    "opening_hours": "9:00 AM - 9:15 PM from Mondays to Saturdays. 9:00 AM - 8:00 PM on Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "king_glab_cuisine_f747cfcd",
+    "name": "King Glab Cuisine",
+    "url": "https://chowdeck.com/store?q=king+glab",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Victoria Island, anad Yaba.",
+    "rating": 4.36,
+    "delivery_areas": [
+      "Yaba",
+      "Sabo",
+      "UNILAG",
+      "Ikeja",
+      "Ogudu",
+      "Alausa",
+      "Ikoyi",
+      "Victoria Island",
+      "Lekki Phase I",
+      "and its environs."
+    ],
+    "opening_hours": "11:00 AM - 10:00 PM from Mondays to Thursdays, 10:30 AM - 10:00 PM on Fridays, 11:00 AM - 10:00 PM on Saturdays and 10:30 AM - 8:00 PM on Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "amoke_oge_e7f0af59",
+    "name": "Amoke Oge",
+    "url": "https://chowdeck.com/store?q=amoke+oge",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Eti-Osa",
+    "location": "Balawa, Ikoyi, and Surulere.",
+    "rating": 4.34,
+    "delivery_areas": [
+      "Ikoyi",
+      "Victoria Island",
+      "Lekki",
+      "Balawa",
+      "Surulere",
+      "Sabo",
+      "UNILAG",
+      "Pedro",
+      "and its environs."
+    ],
+    "opening_hours": "9:00 AM - 10:00 PM from Tuesdays to Sundays. Closed on Mondays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "ajisafe_fce11e55",
+    "name": "Ajisafe",
+    "url": "https://chowdeck.com/store/lekki/restaurants/foodies-lekki-phase-one",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "16, Ajisafe St, off Isaac John St, Ikeja GRA, Lagos",
+    "rating": 4.34,
+    "delivery_areas": [
+      "Ikoyi",
+      "Victoria Island",
+      "Lekki Phase I",
+      "Ikate",
+      "Jakande",
+      "Osapa London",
+      "Igbo Efon",
+      "Ologolo",
+      "Agungi",
+      "and its environs."
+    ],
+    "opening_hours": "9:15 AM - 4:45 PM from Mondays to Fridays. Closed on Saturdays and Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "foodies_b8589391",
+    "name": "Foodies",
+    "url": "https://chowdeck.com/store/lekki/restaurants/foodies-lekki-phase-one",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Eti-Osa",
+    "location": "23 Admiralty Way, Lekki Phase I, Lagos, Nigeria.",
+    "rating": 4.28,
+    "delivery_areas": [
+      "Ikoyi",
+      "Victoria Island",
+      "Lekki Phase I",
+      "Ikate",
+      "Jakande",
+      "Osapa London",
+      "Igbo Efon",
+      "Ologolo",
+      "Agungi",
+      "and its environs."
+    ],
+    "opening_hours": "9:00 AM - 11:59 PM from Mondays to Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "labule_3f382358",
+    "name": "Labule",
+    "url": "https://chowdeck.com/store?q=labule",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "Ikeja, Lekki, and Ogudu.",
+    "rating": 4.19,
+    "delivery_areas": [
+      "Alausa",
+      "Ikoyi",
+      "Victoria Island",
+      "Lekki Phase I",
+      "Ikate",
+      "Ikeja",
+      "Jakande",
+      "Osapa London",
+      "Ogudu",
+      "and its environs."
+    ],
+    "opening_hours": "9:00 AM - 11:59 PM from Mondays to Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  },
+  {
+    "id": "belefull_401184a5",
+    "name": "Belefull",
+    "url": "https://chowdeck.com/store/ikeja/restaurants/belefull",
+    "city": "Lagos",
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "location": "21 Opebi Rd, Allen 101233, Ikeja, Lagos.",
+    "rating": 4.19,
+    "delivery_areas": [
+      "Ikeja",
+      "Allen Avenue",
+      "Ogba",
+      "Ogudu",
+      "and its environs."
+    ],
+    "opening_hours": "9:00 AM - 7:00 PM from Mondays to Saturdays. 10:00 AM - 6:00 PM on Sundays.",
+    "cuisine": "Nigerian",
+    "specialties": [
+      "Jollof"
+    ]
+  }
+]

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Chowdeck Restaurants - Best Jollof Rice in Nigeria{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <h1 class="hero-title">Discover Amazing Restaurants</h1>
+        <p class="hero-subtitle">Find the best Jollof Rice restaurants in Lagos & Abuja</p>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search restaurants..." class="search-input">
+            <select id="stateFilter" class="location-filter">
+                <option value="">Select State...</option>
+            </select>
+            <select id="lgaFilter" class="location-filter">
+                <option value="">Select LGA...</option>
+            </select>
+            <button id="fetchBtn" class="fetch-btn">Search Location</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <p>Fetching restaurants from Chowdeck...</p>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number" id="totalCount">{{ restaurants|length }}</span>
+            <span class="stat-label">Restaurants</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="currentPage">1</span>
+            <span class="stat-label">Page</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="avgRating">{{ avg_rating }}</span>
+            <span class="stat-label">Avg Rating</span>
+        </div>
+    </div>
+
+    <div class="restaurants-grid" id="restaurantsGrid">
+        {% for restaurant in restaurants %}
+        <div class="restaurant-card"
+             data-city="{{ restaurant.city or 'Unknown' }}"
+             data-name="{{ restaurant.name|lower }}"
+             data-location="{{ restaurant.location|lower if restaurant.location else '' }}"
+             data-cuisine="{{ restaurant.cuisine|lower if restaurant.cuisine else '' }}"
+             data-specialties="{{ restaurant.specialties|join(',')|lower if restaurant.specialties else '' }}">
+            <div class="card-header">
+                <div class="restaurant-icon">🍛</div>
+                {% if restaurant.rating %}
+                <div class="rating-badge">
+                    <span class="star">⭐</span>
+                    <span class="rating-value">{{ restaurant.rating }}</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="card-body">
+                <h3 class="restaurant-name">{{ restaurant.name }}</h3>
+
+                <div class="restaurant-info">
+                    {% if restaurant.city %}
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <span class="info-text">{{ restaurant.city }}{% if restaurant.state %}, {{ restaurant.state }}{% endif %}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if restaurant.lga %}
+                    <div class="info-item">
+                        <span class="info-icon">🏛️</span>
+                        <span class="info-text">{{ restaurant.lga }} LGA</span>
+                    </div>
+                    {% endif %}
+
+                    {% if restaurant.location %}
+                    <div class="info-item">
+                        <span class="info-icon">🏠</span>
+                        <span class="info-text">{{ restaurant.location[:50] }}{% if restaurant.location|length > 50 %}...{% endif %}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if restaurant.opening_hours %}
+                    <div class="info-item">
+                        <span class="info-icon">🕒</span>
+                        <span class="info-text">{{ restaurant.opening_hours[:40] }}{% if restaurant.opening_hours|length > 40 %}...{% endif %}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if restaurant.delivery_areas %}
+                    <div class="info-item">
+                        <span class="info-icon">🚚</span>
+                        <span class="info-text">{{ restaurant.delivery_areas|length }} delivery areas</span>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="specialties">
+                    {% for specialty in restaurant.specialties %}
+                    <span class="specialty-tag">{{ specialty }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <a href="/restaurant/{{ restaurant.id }}" class="btn-view">View Details</a>
+                {% if restaurant.url %}
+                <a href="{{ restaurant.url }}" target="_blank" class="btn-order">Order Now</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="noResults" class="no-results" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>No restaurants found</h3>
+        <p>Try adjusting your search or select a different location</p>
+    </div>
+
+    <div id="paginationControls" class="pagination-controls" style="display: none;">
+        <button id="prevBtn" class="pagination-btn" disabled>← Previous</button>
+        <span id="pageInfo" class="page-info">Page 1 of 1</span>
+        <button id="nextBtn" class="pagination-btn" disabled>Next →</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/locationHandler.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

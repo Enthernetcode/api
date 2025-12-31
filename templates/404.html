@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Restaurant Not Found - Chowdeck{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="no-results" style="padding: 6rem 2rem;">
+        <div class="no-results-icon" style="font-size: 6rem;">🔍</div>
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">Restaurant Not Found</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Sorry, we couldn't find the restaurant you're looking for.</p>
+        <a href="/" class="btn-order-large" style="display: inline-block; width: auto; padding: 1rem 2rem;">
+            ← Back to All Restaurants
+        </a>
+    </div>
+</div>
+{% endblock %}

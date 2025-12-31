@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}{{ restaurant.name }} - Chowdeck Restaurants{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="breadcrumb">
+        <a href="/">Home</a> / <span>{{ restaurant.name }}</span>
+    </div>
+
+    <div class="restaurant-detail">
+        <div class="detail-header">
+            <div class="detail-icon">🍽️</div>
+            <div class="detail-title">
+                <h1>{{ restaurant.name }}</h1>
+                {% if restaurant.rating %}
+                <div class="rating-large">
+                    <span class="star-large">⭐</span>
+                    <span class="rating-value-large">{{ restaurant.rating }}</span>
+                    <span class="rating-label">out of 5</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="detail-grid">
+            <div class="detail-main">
+                <div class="detail-section">
+                    <h2 class="section-title">📍 Location</h2>
+                    <div class="section-content">
+                        {% if restaurant.city %}
+                        <p class="location-city"><strong>City:</strong> {{ restaurant.city }}</p>
+                        {% endif %}
+                        {% if restaurant.state %}
+                        <p class="location-state"><strong>State:</strong> {{ restaurant.state }}</p>
+                        {% endif %}
+                        {% if restaurant.lga %}
+                        <p class="location-lga"><strong>Local Government Area:</strong> {{ restaurant.lga }}</p>
+                        {% endif %}
+                        {% if restaurant.location %}
+                        <p class="location-address"><strong>Address:</strong> {{ restaurant.location }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if restaurant.delivery_areas %}
+                <div class="detail-section">
+                    <h2 class="section-title">🚚 Delivery Areas</h2>
+                    <div class="section-content">
+                        <div class="delivery-areas-grid">
+                            {% for area in restaurant.delivery_areas %}
+                            <div class="delivery-area-tag">{{ area }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if restaurant.opening_hours %}
+                <div class="detail-section">
+                    <h2 class="section-title">🕒 Opening Hours</h2>
+                    <div class="section-content">
+                        <p class="opening-hours">{{ restaurant.opening_hours }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if restaurant.specialties %}
+                <div class="detail-section">
+                    <h2 class="section-title">⭐ Specialties</h2>
+                    <div class="section-content">
+                        <div class="specialties-list">
+                            {% for specialty in restaurant.specialties %}
+                            <span class="specialty-tag-large">{{ specialty }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="detail-sidebar">
+                <div class="sidebar-card">
+                    <h3>Order Now</h3>
+                    {% if restaurant.url %}
+                    <a href="{{ restaurant.url }}" target="_blank" class="btn-order-large">
+                        Order on Chowdeck
+                    </a>
+                    {% endif %}
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Restaurant Info</h3>
+                    <div class="info-list">
+                        <div class="info-row">
+                            <span class="info-key">Cuisine:</span>
+                            <span class="info-value">{{ restaurant.cuisine or 'Nigerian' }}</span>
+                        </div>
+                        {% if restaurant.rating %}
+                        <div class="info-row">
+                            <span class="info-key">Rating:</span>
+                            <span class="info-value">{{ restaurant.rating }} / 5</span>
+                        </div>
+                        {% endif %}
+                        {% if restaurant.city %}
+                        <div class="info-row">
+                            <span class="info-key">City:</span>
+                            <span class="info-value">{{ restaurant.city }}</span>
+                        </div>
+                        {% endif %}
+                        {% if restaurant.state %}
+                        <div class="info-row">
+                            <span class="info-key">State:</span>
+                            <span class="info-value">{{ restaurant.state }}</span>
+                        </div>
+                        {% endif %}
+                        {% if restaurant.lga %}
+                        <div class="info-row">
+                            <span class="info-key">LGA:</span>
+                            <span class="info-value">{{ restaurant.lga }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-actions">
+            <a href="/" class="btn-back">← Back to All Restaurants</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
