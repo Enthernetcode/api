@@ -4,7 +4,7 @@ Restaurant service layer
 from datetime import datetime, timedelta
 from src.clients.chowdeck import ChowdeckClient
 from src.data.seed_restaurants import get_all_seed_restaurants
-from src.data.lagos_restaurants import get_all_lagos_restaurants
+from src.data.mega_lagos_restaurants import get_mega_lagos_restaurants
 
 
 class RestaurantService:
@@ -29,9 +29,9 @@ class RestaurantService:
         all_restaurants = []
         seen_ids = set()
 
-        # 1. Load Lagos restaurants (60+ curated Lagos restaurants)
+        # 1. Load Lagos restaurants (24,000+ mega Lagos database)
         try:
-            lagos_restaurants = get_all_lagos_restaurants()
+            lagos_restaurants = get_mega_lagos_restaurants()
             for restaurant in lagos_restaurants:
                 all_restaurants.append(restaurant)
                 seen_ids.add(restaurant['id'])

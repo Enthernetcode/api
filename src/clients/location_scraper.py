@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from typing import List, Dict
 from src.data.locations import get_areas_for_lga, get_chowdeck_url_for_area
 from src.data.seed_restaurants import get_all_seed_restaurants
-from src.data.lagos_restaurants import get_all_lagos_restaurants
+from src.data.mega_lagos_restaurants import get_mega_lagos_restaurants
 
 
 class LocationBasedScraper:
@@ -35,10 +35,10 @@ class LocationBasedScraper:
         all_restaurants = []
         seen_ids = set()
 
-        # 1. Load comprehensive Lagos database if state is Lagos
+        # 1. Load mega Lagos database if state is Lagos (24,000+ restaurants)
         if state == 'Lagos':
             try:
-                lagos_restaurants = get_all_lagos_restaurants()
+                lagos_restaurants = get_mega_lagos_restaurants()
 
                 # Filter by LGA if specified
                 for restaurant in lagos_restaurants:

@@ -107,3 +107,49 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
+// Download Excel functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadBtn = document.getElementById('downloadExcelBtn');
+    
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            // Get current filter state
+            const stateFilter = document.getElementById('stateFilter');
+            const lgaFilter = document.getElementById('lgaFilter');
+            
+            const state = stateFilter ? stateFilter.value : 'Lagos';
+            const lga = lgaFilter ? lgaFilter.value : '';
+            
+            // Build download URL
+            let downloadUrl = '/api/restaurants/download/excel';
+            const params = new URLSearchParams();
+            
+            if (state) {
+                params.append('state', state);
+            }
+            
+            if (lga) {
+                params.append('lga', lga);
+            }
+            
+            if (params.toString()) {
+                downloadUrl += '?' + params.toString();
+            }
+            
+            // Show downloading feedback
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '⏳ Preparing...';
+            downloadBtn.disabled = true;
+            
+            // Trigger download
+            window.location.href = downloadUrl;
+            
+            // Reset button after a delay
+            setTimeout(() => {
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+            }, 2000);
+        });
+    }
+});

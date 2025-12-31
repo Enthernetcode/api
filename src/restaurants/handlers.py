@@ -1,10 +1,12 @@
 """
 Restaurant API handlers
 """
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, send_file
 from src.restaurants.service import RestaurantService
 from src.data.locations import get_all_states, get_lgas_for_state
 from src.clients.location_scraper import LocationBasedScraper
+from src.utils.excel_export import create_restaurants_excel
+from datetime import datetime
 
 restaurants_bp = Blueprint('restaurants', __name__)
 restaurant_service = RestaurantService()
@@ -176,6 +178,43 @@ def get_restaurants_by_location():
             'count': len(paginated),
             'data': paginated
         })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
+@restaurants_bp.route('/restaurants/download/excel', methods=['GET'])
+def download_restaurants_excel():
+    """
+    Download all restaurants as Excel file
+    Query params:
+        - state: Filter by state (optional, default: Lagos)
+        - lga: Filter by LGA (optional)
+    """
+    try:
+        state = request.args.get('state', 'Lagos')
+        lga = request.args.get('lga')
+
+        # Get restaurants
+        if lga:
+            restaurants = location_scraper.fetch_for_location(state, lga)
+            filename = f"{state}_{lga}_Restaurants_{datetime.now().strftime('%Y%m%d')}.xlsx"
+        else:
+            restaurants = location_scraper.fetch_for_location(state)
+            filename = f"{state}_Restaurants_{datetime.now().strftime('%Y%m%d')}.xlsx"
+
+        # Generate Excel file
+        excel_file = create_restaurants_excel(restaurants, state)
+
+        return send_file(
+            excel_file,
+            mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            as_attachment=True,
+            download_name=filename
+        )
+
     except Exception as e:
         return jsonify({
             'success': False,
